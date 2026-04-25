@@ -1,0 +1,179 @@
+<div class="min-h-screen flex flex-col bg-slate-50 font-sans text-slate-900 selection:bg-indigo-100">
+  
+  <!-- Navigation -->
+  <header class="w-full px-6 lg:px-12 py-4 flex items-center justify-between bg-white shrink-0 border-b border-slate-200 sticky top-0 z-50">
+    <div class="flex items-center gap-2">
+      <div class="w-10 h-10 rounded-xl bg-indigo-600 shadow-lg shadow-indigo-200 flex items-center justify-center">
+        <mat-icon class="text-white">account_balance_wallet</mat-icon>
+      </div>
+      <span class="font-bold text-2xl tracking-tight text-slate-800">Goma<span class="text-indigo-600">Wallet</span></span>
+    </div>
+    <a routerLink="/login" class="text-sm font-semibold text-indigo-600 md:hidden">Connexion</a>
+    <div class="hidden md:flex items-center gap-6">
+      <a routerLink="/login" class="text-sm font-semibold text-slate-500 hover:text-slate-800 transition-colors">Connexion</a>
+      <a routerLink="/login" class="px-6 py-2.5 bg-slate-900 text-white rounded-full text-sm font-bold shadow-md hover:bg-indigo-600 active:scale-95 transition-all">Commencer</a>
+    </div>
+  </header>
+
+  <main class="flex-grow flex flex-col overflow-hidden">
+    
+    <!-- Hero Section -->
+    <section class="px-6 lg:px-12 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12 bg-gradient-to-br from-white to-slate-50 border-b border-slate-200">
+      <div class="flex-1 space-y-6 md:space-y-8 max-w-xl mx-auto md:mx-0 text-center md:text-left">
+        <div class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-widest border border-emerald-100">
+          Spécialement mis au point pour vos réalités
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
+          Où va mon argent et <span class="text-indigo-600 italic block mt-2">comment le contrôler ?</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+          Comprenez vos finances en temps réel, planifiez vos dépenses même avec des revenus irréguliers, et développez une discipline d'épargne. 
+          <strong class="font-bold text-slate-800">100% fonctionnel hors-ligne.</strong>
+        </p>
+        <div class="pt-4 flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+          <a routerLink="/login" class="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-indigo-600 text-white rounded-2xl text-lg font-bold shadow-xl shadow-indigo-100 hover:bg-indigo-700 active:scale-95 transition-all">
+            <span>Commencer maintenant</span>
+            <mat-icon class="text-[20px] w-5 h-5 flex items-center justify-center">arrow_forward</mat-icon>
+          </a>
+          <div class="flex items-center gap-3 sm:ml-4">
+            <div class="flex -space-x-2">
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-300"></div>
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-400"></div>
+              <div class="w-8 h-8 rounded-full border-2 border-white bg-slate-500"></div>
+            </div>
+            <p class="text-xs text-slate-500 font-medium">+10k utilisateurs</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Hero Illustration (Abstract/UI hints) -->
+      <div class="flex-1 w-full max-w-sm md:max-w-none relative flex justify-center py-10 md:py-0">
+        <div class="absolute -top-10 md:top-1/2 md:-translate-y-1/2 w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-indigo-100/60 rounded-full blur-3xl"></div>
+        <div class="relative w-full max-w-[280px] bg-slate-900 rounded-[3rem] border-[8px] border-slate-800 shadow-2xl p-6 flex flex-col gap-4 z-10 overflow-hidden">
+          
+          <div class="flex justify-between items-center mb-2">
+            <div>
+              <p class="text-xs text-slate-400 uppercase font-bold tracking-widest">Solde Actuel</p>
+              <p class="text-3xl font-bold text-white mt-1">125 000 F</p>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center border border-white/5">
+              <mat-icon class="text-indigo-400">account_balance</mat-icon>
+            </div>
+          </div>
+
+          <!-- Fake UI Item 1 -->
+          <div class="h-14 w-full bg-slate-800/80 rounded-xl flex items-center px-4 border border-white/5 gap-3">
+            <div class="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center text-orange-400">
+              <mat-icon class="text-sm">shopping_cart</mat-icon>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm font-semibold text-slate-200">Épicerie</p>
+              <p class="text-xs text-slate-500">Aujourd'hui</p>
+            </div>
+            <p class="text-sm font-bold text-slate-200">- 15 000 F</p>
+          </div>
+
+          <!-- Fake UI Item 2 -->
+          <div class="h-14 w-full bg-slate-800/80 rounded-xl flex items-center px-4 border border-white/5 gap-3">
+            <div class="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+              <mat-icon class="text-sm">electrical_services</mat-icon>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm font-semibold text-slate-200">Électricité</p>
+              <p class="text-xs text-slate-500">Hier</p>
+            </div>
+            <p class="text-sm font-bold text-slate-200">- 5 000 F</p>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-white py-20 px-6 lg:px-12 border-b border-slate-200">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Pensé pour votre quotidien</h2>
+          <p class="text-slate-500 leading-relaxed text-lg">Une gestion budgétaire orientée action, pas seulement analytique. Parfait pour les réalités d'ici.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 text-left lg:grid-cols-4 gap-8">
+          
+          <!-- Feature 1 -->
+          <div class="p-6 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col transition-transform hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
+              <mat-icon>wifi_off</mat-icon>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Support Hors Ligne</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Pas de connexion internet constante ? Aucun problème. GomaWallet synchronise vos données dès que vous retrouvez une connexion.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="p-6 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col transition-transform hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
+              <mat-icon>pie_chart</mat-icon>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Revenus Irréguliers</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Que vous soyez salarié ou indépendant, planifiez votre mois en fonction de ce que vous avez vraiment en poche.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="p-6 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col transition-transform hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6">
+              <mat-icon>insights</mat-icon>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Friction Faible</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Ajoutez une dépense en 2 clics. La simplicité est au cœur pour ne jamais abandonner votre suivi en cours de route.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="p-6 bg-white rounded-3xl border border-slate-200 shadow-sm flex flex-col transition-transform hover:-translate-y-1">
+            <div class="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mb-6">
+              <mat-icon>savings</mat-icon>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Discipline d'Épargne</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Finissez le mois serein. Mettez de côté efficacement en voyant exactement quelle marge de manœuvre il vous reste.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="py-20 px-6 lg:px-12 bg-slate-900 relative overflow-hidden flex-shrink-0">
+      <!-- Decorative circles -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-indigo-600 blur-[100px] rounded-[100%] opacity-30 pointer-events-none"></div>
+      
+      <div class="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">Reprenez le pouvoir sur vos finances.</h2>
+        <p class="text-slate-300 text-lg mb-10 max-w-xl leading-relaxed">Rejoignez GomaWallet aujourd'hui et obtenez la tranquillité d'esprit que vous méritez.</p>
+        
+        <a routerLink="/login" class="flex items-center justify-center gap-2 px-8 py-4 bg-indigo-600 text-white rounded-full text-lg font-bold shadow-xl shadow-indigo-900/50 hover:bg-indigo-700 active:scale-95 transition-all">
+          <span>Ouvrir mon tableau de bord</span>
+          <mat-icon class="text-[20px] w-5 h-5 flex items-center justify-center">launch</mat-icon>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="h-auto md:h-16 py-6 md:py-0 px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between bg-white border-t border-slate-200 shrink-0 text-slate-400 text-xs font-medium gap-4">
+    <div class="flex items-center justify-center gap-1">
+      <span class="font-bold text-slate-600">GomaWallet</span> &copy; 2026 - Solution FinTech Africaine
+    </div>
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-indigo-600 transition-colors">Conditions</a>
+      <a href="#" class="hover:text-indigo-600 transition-colors">Confidentialité</a>
+      <a href="#" class="hover:text-indigo-600 transition-colors">Aide</a>
+    </div>
+    <div class="hidden lg:flex items-center gap-4">
+      <div class="flex gap-2">
+        <div class="w-4 h-4 bg-slate-200 rounded-full"></div>
+        <div class="w-4 h-4 bg-slate-200 rounded-full"></div>
+        <div class="w-4 h-4 bg-slate-200 rounded-full"></div>
+      </div>
+    </div>
+  </footer>
+
+</div>

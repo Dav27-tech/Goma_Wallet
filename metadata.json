@@ -1,0 +1,6 @@
+{
+  "name": "GomaWallet",
+  "description": "Une application mobile-first de gestion de dépenses mensuelles, avec mode hors-ligne et pensée pour les revenus irréguliers en Afrique.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

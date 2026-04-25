@@ -1,0 +1,71 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Information about a GomaWallet user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "isNewUser": { "type": "boolean" },
+        "currency": { "type": "string", "enum": ["USD", "CDF", "RWF", "XOF"] }
+      },
+      "required": ["id", "email"]
+    },
+    "Budget": {
+      "title": "Budget",
+      "description": "Monthly budget definition",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "month": { "type": "number" },
+        "year": { "type": "number" },
+        "status": { "type": "string", "enum": ["active", "inactive"] },
+        "type": { "type": "string", "enum": ["personal", "50/30/20"] },
+        "categories": { 
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "allocated": { "type": "number" }
+            }
+          }
+        },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Expense": {
+      "title": "Expense",
+      "description": "A single expense entry",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "budgetId": { "type": "string" },
+        "amount": { "type": "number" },
+        "category": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "paymentMethod": { "type": "string", "enum": ["Cash", "Mobile Money", "Banque"] },
+        "note": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/budgets/{budgetId}": {
+      "schema": "Budget",
+      "description": "Monthly budgets"
+    },
+    "/expenses/{expenseId}": {
+      "schema": "Expense",
+      "description": "Expense entries"
+    }
+  }
+}
