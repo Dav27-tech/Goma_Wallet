@@ -1,0 +1,46 @@
+# Règles Antigravity - Projet Goma Wallet
+
+En tant qu'assistant de développement et architecte logiciel pour ce projet, voici les règles strictes à suivre pour toute création, modification ou analyse de code.
+
+## 1. Stack Technologique
+
+*   **Framework Frontend :** Angular (dernière version stable).
+    *   **Composants :** Utilisation stricte des *Standalone Components* (pas de modules `NgModule` sauf si absolument nécessaire pour des dépendances tierces obsolètes).
+    *   **Réactivité :** Utilisation des *Signals* Angular (pas de RxJS complexe si les Signals peuvent faire le travail, ex: `signal()`, `computed()`, `effect()`).
+    *   **Templates :** Utilisation exclusive du nouveau *Control Flow* (`@if`, `@for`, `@switch`).
+*   **Backend & Infrastructure :** AngularFire (Firebase).
+*   **Interface Utilisateur (UI) :** Angular Material.
+    *   Utiliser les composants Material de manière privilégiée pour garantir une UI cohérente et accessible.
+
+## 2. Règles Métier & Réalités Africaines
+
+Le projet Goma Wallet est spécifiquement conçu pour répondre aux besoins et contraintes du contexte africain. Les principes suivants doivent guider l'architecture et l'implémentation :
+
+*   **Offline-First & Connexions Instables :** L'application doit rester fonctionnelle même avec une connexion internet intermittente ou inexistante.
+    *   *Directive :* Activer et configurer systématiquement la persistance hors ligne de Firestore (`offline capability`). Gérer gracieusement les états de chargement et d'erreur réseau dans l'UI. Les écritures doivent utiliser le cache local de Firestore en priorité.
+*   **Gestion Multidevise :** Le système doit prendre en charge de multiples devises dès sa conception, avec la capacité de gérer les taux de change ou les affichages dynamiques selon le pays de l'utilisateur.
+*   **Focus sur l'Épargne d'Urgence :** Les fonctionnalités liées à la constitution et au suivi de fonds d'urgence doivent être mises en avant dans l'UX/UI et traitées comme des modules critiques du système.
+
+## 3. Architecture des Dossiers
+
+L'arborescence du code source dans `src/app` doit strictement respecter la structure suivante :
+
+```text
+src/app/
+├── core/               # Éléments fondamentaux et singletons de l'application
+│   ├── models/         # Interfaces et types de données TypeScript
+│   └── services/       # Services métiers globaux
+│       ├── auth/       # Gestion de l'authentification
+│       ├── firestore/  # Accès aux données et configuration offline
+│       └── storage/    # Gestion du stockage de fichiers
+├── features/           # Modules fonctionnels partagés et composants réutilisables
+│   ├── helpers/        # Fonctions utilitaires, pipes, directives
+│   └── shared/         # Composants UI partagés (boutons, cartes, modales Material)
+└── pages/              # Composants "Smart" représentant les vues routées de l'application
+```
+
+## 4. Instructions de Code
+
+*   Prioriser la lisibilité et la maintenabilité du code.
+*   Assurer un typage strict avec TypeScript (éviter `any`).
+*   Lors de la création d'un service Firebase, s'assurer que les appels gèrent correctement le cache et les promesses en mode hors ligne.
